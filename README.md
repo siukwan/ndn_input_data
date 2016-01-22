@@ -13,3 +13,16 @@ cp -rf ndn_input_data/input_556 input
 input_556:556辆车的数据集
 
 input_eason:eason的53辆车的数据集
+
+
+##生成命令：
+
+###//osm文件转换成net.xml
+H:\sumo-0.23.0\bin\netconvert --osm-files map.osm.xml -o map.net.xml
+
+###生成仿真轨迹信息
+D:\sumo-0.23.0\bin\sumo -c cfg.sumocfg --fcd-output fcdoutput.xml  
+###运行
+D:\sumo-0.23.0\bin\sumo-gui.exe cfg.sumocfg 
+###生成仿真轨迹信息
+D:\sumo-0.23.0\bin\sumo -c cfg.sumocfg --fcd-output fcdoutput.xml --no-internal-links=true 
