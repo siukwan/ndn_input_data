@@ -79,7 +79,7 @@
     <vehicle id="19" depart="1.19" type="CarA">
         <route edges="4/4to4/3 4/3to3/3 3/3to3/4 3/4to4/4"/>
     </vehicle>
-    <vehicle id="20" depart="1.25">
+    <vehicle id="20" depart="1.25" type="CarA">
         <route edges="4/3to5/3 5/3to4/3 4/3to3/3 3/3to3/4 3/4to4/4"/>
     </vehicle>
     <vehicle id="21" depart="1.31">
