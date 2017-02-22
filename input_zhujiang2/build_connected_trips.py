@@ -13,9 +13,12 @@ total_count = node_count * interval
 
 sumo_path = 'F:/sumo-win32-0.24.0/sumo-0.24.0/'
 
+os.popen(sumo_path + 'bin/netconvert --osm-files target.osm -o input_net.net.xml')
+print sumo_path + 'bin/netconvert --osm-files target.osm -o input_net.net.xml'
 node = dict()
 
-while len(node) != node_count :
+while len(node) < node_count :
+    print(len(node))
     os.popen('python ' + sumo_path + '/tools/randomTrips.py -n input_net.net.xml -e ' + str(total_count) + ' -p ' + str(interval))
     os.popen(sumo_path + 'bin/duarouter.exe --trip-files=trips.trips.xml --net-file=input_net.net.xml --output-file=routes.rou.xml')
     tree = ET.parse('routes.rou.xml')  # 载入数据
@@ -54,4 +57,8 @@ os.popen(sumo_path + 'bin/duarouter.exe --trip-files=trips.trips.xml --net-file=
 os.popen(sumo_path + 'bin/sumo -c cfg.sumocfg --fcd-output fcdoutput.xml')
 
 
+try:
+    os.remove('routes.rou.alt.xml')
+except  WindowsError:
+    pass
 print 'OK'
