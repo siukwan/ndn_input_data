@@ -18,6 +18,7 @@
 -->
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+	<vType id="CarA" maxSpeed="10"/>
     <vehicle id="0" depart="0.00" type="CarA">
         <route edges="488#3 488#4 488#5 15#0 15#1 525#1 380 404#0 404#1 404#2 433#0 433#1 646 406#0 406#1 611 467#0 467#1 479 471#0 471#1 471#2 531 365 367"/>
     </vehicle>
